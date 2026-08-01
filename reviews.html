@@ -1,1 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ClearView Reviews</title>
+
+<style>
+
+* {
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body {
+
+margin:0;
+
+font-family:"Segoe UI", Arial, sans-serif;
+
+background:#f5fbff;
+
+color:#222;
+
+}
+
+
+.container {
+
+width:min(92%,900px);
+
+margin:auto;
+
+padding:50px 0;
+
+}
+
+
+
+.card {
+
+background:white;
+
+padding:30px;
+
+margin-bottom:25px;
+
+border-radius:22px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+h1,h2 {
+
+color:#0077ff;
+
+}
+
+
+
+input,
+textarea,
+select {
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+border-radius:10px;
+
+border:1px solid #ccc;
+
+font-size:16px;
+
+}
+
+
+
+textarea {
+
+height:120px;
+
+resize:none;
+
+}
+
+
+
+button {
+
+background:#0077ff;
+
+color:white;
+
+border:none;
+
+padding:15px 25px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.review {
+
+background:#eef8ff;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:15px 0;
+
+}
+
+
+
+.stars {
+
+color:#ffb400;
+
+font-size:22px;
+
+}
+
+
+
+.back {
+
+color:#0077ff;
+
+text-decoration:none;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="card">
+
+<h1>
+ClearView Reviews
+</h1>
+
+
+<p>
+See what customers are saying about ClearView.
+</p>
+
+
+<a class="back" href="index.html">
+← Back to Home
+</a>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+Customer Reviews
+</h2>
+
+
+<div id="reviewList">
+
+<p>
+Loading reviews...
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+Leave A Review
+</h2>
+
+
+<input id="name" placeholder="Your Name">
+
+
+
+<select id="rating">
+
+<option value="★★★★★">★★★★★</option>
+
+<option value="★★★★">★★★★</option>
+
+<option value="★★★">★★★</option>
+
+<option value="★★">★★</option>
+
+<option value="★">★</option>
+
+</select>
+
+
+
+
+<textarea id="description" placeholder="Description (optional)"></textarea>
+
+
+
+<button onclick="submitReview()">
+
+Submit Review
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<script type="module">
+
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { 
+getFirestore,
+collection,
+addDoc,
+getDocs,
+query,
+orderBy
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+
+
+// PASTE YOUR FIREBASE CONFIG HERE
+
+
+const firebaseConfig = {
+
+
+};
+
+
+
+
+
+const app = initializeApp(firebaseConfig);
+
+
+const db = getFirestore(app);
+
+
+
+
+
+
+window.submitReview = async function(){
+
+
+let name = document.getElementById("name").value;
+
+let rating = document.getElementById("rating").value;
+
+let description = document.getElementById("description").value;
+
+
+
+if(!name){
+
+alert("Please enter your name");
+
+return;
+
+}
+
+
+
+await addDoc(collection(db,"reviews"),{
+
+name:name,
+
+rating:rating,
+
+description:description,
+
+date:new Date()
+
+});
+
+
+
+alert("Review submitted!");
+
+
+location.reload();
+
+
+}
+
+
+
+
+
+
+
+async function loadReviews(){
+
+
+const reviewList = document.getElementById("reviewList");
+
+
+const q = query(
+collection(db,"reviews"),
+orderBy("date","desc")
+);
+
+
+
+const snapshot = await getDocs(q);
+
+
+
+reviewList.innerHTML="";
+
+
+
+if(snapshot.empty){
+
+reviewList.innerHTML=
+
+"<p>No reviews yet. Be the first!</p>";
+
+return;
+
+}
+
+
+
+snapshot.forEach((doc)=>{
+
+
+let data = doc.data();
+
+
+
+reviewList.innerHTML += `
+
+<div class="review">
+
+<b>${data.name}</b>
+
+<div class="stars">
+
+${data.rating}
+
+</div>
+
+
+<p>
+
+${data.description || ""}
+
+</p>
+
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+
+loadReviews();
+
+
+</script>
+
+
+</body>
+
+</html>
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDrefBbTB8v-p76GvSQrwTI-SMjzw3jiNw",
+  authDomain: "clearview-27bb3.firebaseapp.com",
+  projectId: "clearview-27bb3",
+  storageBucket: "clearview-27bb3.firebasestorage.app",
+  messagingSenderId: "753453374188",
+  appId: "1:753453374188:web:523a361368de808cac23c9",
+  measurementId: "G-5FEMHNH98E"
+};
