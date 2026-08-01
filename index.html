@@ -4,68 +4,137 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ClearView Window Cleaning</title>
 
+
 <style>
 
 * {
-margin:0;
-padding:0;
+
 box-sizing:border-box;
+
 scroll-behavior:smooth;
+
 }
+
+
 
 body {
-font-family:"Segoe UI", Arial, sans-serif;
-background:#f5fbff;
-color:#222;
-overflow-x:hidden;
+
+margin:0;
+
+font-family:Arial, Helvetica, sans-serif;
+
+background:#f7fbff;
+
+color:#1a1a1a;
+
 }
 
 
-/* HERO */
 
-.hero {
+/* NAVBAR */
 
-min-height:100vh;
+
+nav {
+
+position:sticky;
+
+top:0;
+
+z-index:100;
+
+background:white;
 
 display:flex;
-justify-content:center;
+
+justify-content:space-between;
+
 align-items:center;
 
-text-align:center;
+padding:18px 6%;
 
-padding:40px;
-
-background:linear-gradient(135deg,#0077ff,#00d4ff);
-
-color:white;
-
-animation:fade 1s ease;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 
 }
+
 
 
 .logo {
 
-font-size:clamp(55px,8vw,95px);
+font-size:26px;
 
 font-weight:900;
 
-animation:float 3s ease-in-out infinite;
-
-text-shadow:0 5px 20px rgba(0,0,0,.2);
+color:#0077ff;
 
 }
 
 
+
+nav a {
+
+text-decoration:none;
+
+color:#333;
+
+font-weight:bold;
+
+margin-left:20px;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero {
+
+min-height:85vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:40px 6%;
+
+background:linear-gradient(135deg,#0077ff,#00c6ff);
+
+color:white;
+
+}
+
+
+
+.hero h1 {
+
+font-size:clamp(45px,8vw,80px);
+
+margin:0;
+
+font-weight:900;
+
+}
+
+
+
 .hero p {
 
-font-size:clamp(18px,3vw,28px);
+font-size:clamp(18px,3vw,25px);
 
-margin-top:15px;
+max-width:700px;
+
+margin:20px auto;
 
 }
 
@@ -73,15 +142,15 @@ margin-top:15px;
 
 .buttons {
 
-margin-top:35px;
-
 display:flex;
-
-flex-wrap:wrap;
 
 justify-content:center;
 
+flex-wrap:wrap;
+
 gap:15px;
+
+margin-top:35px;
 
 }
 
@@ -89,21 +158,19 @@ gap:15px;
 
 .button {
 
-padding:15px 35px;
-
-border-radius:50px;
-
 background:white;
 
 color:#0077ff;
 
-font-weight:bold;
+padding:15px 35px;
+
+border-radius:50px;
 
 text-decoration:none;
 
-transition:.3s;
+font-weight:bold;
 
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.3s;
 
 }
 
@@ -111,17 +178,31 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 
 .button:hover {
 
-transform:translateY(-4px) scale(1.05);
+transform:translateY(-5px);
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
 
 }
 
 
 
-/* CONTENT */
+.button.dark {
 
-section {
+background:#005fcc;
 
-width:min(92%,1200px);
+color:white;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.container {
+
+width:min(92%,1100px);
 
 margin:auto;
 
@@ -135,60 +216,35 @@ padding:60px 0;
 
 background:white;
 
-padding:35px;
+border-radius:25px;
 
-border-radius:22px;
+padding:35px;
 
 margin-bottom:35px;
 
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 
-animation:slideUp .7s ease;
-
 }
 
 
 
-.card h2 {
+h2 {
 
 color:#0077ff;
 
-margin-bottom:15px;
+font-size:35px;
 
-font-size:clamp(28px,4vw,38px);
-
-}
-
-
-
-/* SERVICES */
-
-.service-list {
-
-line-height:2;
-
-font-size:18px;
+margin-top:0;
 
 }
 
 
 
-/* PRICING */
+p {
 
-.price {
-
-color:#0077ff;
-
-font-size:28px;
-
-font-weight:bold;
-
-margin:10px 0 20px;
+line-height:1.6;
 
 }
-
-
-
 </style>
 
 </head>
@@ -197,71 +253,91 @@ margin:10px 0 20px;
 <body>
 
 
-<div class="hero">
 
-
-<div>
-
+<nav>
 
 <div class="logo">
 ClearView
 </div>
 
 
+<div>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#pricing">
+Pricing
+</a>
+
+<a href="reviews.html">
+Reviews
+</a>
+
+</div>
+
+</nav>
+
+
+
+
+
+<section class="hero">
+
+
+<div>
+
+
+<h1>
+ClearView
+</h1>
+
+
 <p>
-Crystal Clear Windows. Reliable Service.
+Crystal clear windows. Reliable service.
 </p>
+
 
 
 <div class="buttons">
 
 
-<a href="#quote" class="button">
+<a class="button" href="#quote">
+
 Get A Quote
+
 </a>
 
 
-<a href="#cash" class="button">
-Pay In Cash?
+<a class="button dark" href="reviews.html">
+
+Reviews
+
 </a>
 
 
-<a href="reviews.html" class="button">
-View Reviews
-</a>
-
-
 </div>
 
 
 </div>
 
 
-</div>
+</section>
 
 
 
-<section>
-
-
-<div class="card">
-
-
-<h2>
-About ClearView
-</h2>
-
-
-<p>
-ClearView provides affordable and reliable window cleaning services focused on making your windows spotless.
-</p>
-
-
-</div>
 
 
 
-<div class="card">
+<div class="container">
+
+
+
+
+
+
+<div class="card" id="services">
 
 
 <h2>
@@ -269,16 +345,28 @@ Services
 </h2>
 
 
-<p class="service-list">
+<p>
+🪟 Exterior window cleaning
+</p>
 
-✨ Exterior Window Cleaning<br>
 
-✨ Screen Cleaning<br>
+<p>
+✨ Glass cleaning and streak removal
+</p>
 
-✨ Streak-Free Glass Cleaning<br>
 
-✨ Residential Homes
+<p>
+🏠 Ground-level windows
+</p>
 
+
+<p>
+🪜 Second-floor windows available only if a safe ladder is provided by the customer.
+</p>
+
+
+<p>
+ClearView does not provide ladders or climb roofs.
 </p>
 
 
@@ -287,7 +375,11 @@ Services
 
 
 
-<div class="card">
+
+
+
+
+<div class="card" id="pricing">
 
 
 <h2>
@@ -295,89 +387,44 @@ Pricing
 </h2>
 
 
+
 <p>
-Simple, upfront pricing with no hidden fees.
+Small Window
 </p>
-
-
-<br>
 
 
 <h3>
-🪟 Small Window
+$4
 </h3>
 
+
+
+
 <p>
-Bathroom windows, laundry windows, small windows
+Medium Window
 </p>
-
-
-<div class="price">
-$4 Each
-</div>
-
 
 
 <h3>
-🪟 Medium Window
+$6
 </h3>
 
 
+
+
 <p>
-Standard bedroom and living room windows
+Large Window
 </p>
-
-
-<div class="price">
-$6 Each
-</div>
 
 
 <h3>
-🪟 Large Window
+$10
 </h3>
 
 
-<p>
-Picture windows, large front windows, sliding glass doors
-</p>
-
-
-<div class="price">
-$10 Each
-</div>
-
 
 </div>
-<div class="card">
 
-
-<h2>
-Service Information
-</h2>
-
-
-<p>
-✅ Ground-level exterior window cleaning available.
-</p>
-
-
-<p>
-🪜 If you have a safe, stable ladder available that reaches your second-story windows, ClearView can clean those windows using your ladder.
-</p>
-
-
-<p>
-ClearView does not provide ladders or climb onto roofs.
-</p>
-
-
-<p>
-Safety is our top priority. If a window cannot be reached safely, that part of the job may be declined.
-</p>
-
-
-</div>
 
 
 
@@ -393,12 +440,22 @@ Customer Reviews
 </h2>
 
 
+
+<div id="homeReviews">
+
 <p>
-See what customers are saying about ClearView.
+Loading reviews...
 </p>
 
 
-<a class="button" href="reviews.html">
+</div>
+
+
+
+<br>
+
+
+<a class="button dark" href="reviews.html">
 
 View All Reviews
 
@@ -413,7 +470,8 @@ View All Reviews
 
 
 
-<div class="card" id="cash">
+
+<div class="card">
 
 
 <h2>
@@ -421,24 +479,14 @@ Pay In Cash?
 </h2>
 
 
-<p>
-Yes! ClearView accepts cash payments after the cleaning service is completed.
-</p>
-
 
 <p>
-Payment is only due once the job is finished and you are satisfied.
+Cash payments are accepted after the job is completed and you are satisfied with the service.
 </p>
+
 
 
 </div>
-
-
-
-
-
-
-
 <div class="card" id="quote">
 
 
@@ -447,34 +495,29 @@ Get A Quote
 </h2>
 
 
+
 <p>
-Request a free estimate for your window cleaning job.
+Request a free estimate from ClearView.
 </p>
 
 
-<br>
+
+<input id="customerName" placeholder="Your Name">
 
 
-<form>
+<input id="windowCount" placeholder="Number of Windows" type="number">
 
 
-<input type="text" placeholder="Your Name">
+<textarea id="jobDetails" placeholder="Tell us about your window cleaning job"></textarea>
 
 
-<input type="number" placeholder="Number of Windows">
 
-
-<textarea placeholder="Tell us about your job"></textarea>
-
-
-<button class="button" type="submit">
+<a class="button dark" href="mailto:windowcleaningpro@proton.me">
 
 Send Quote
 
-</button>
+</a>
 
-
-</form>
 
 
 </div>
@@ -485,7 +528,7 @@ Send Quote
 
 
 
-<div class="card contact">
+<div class="card">
 
 
 <h2>
@@ -494,33 +537,41 @@ Contact ClearView
 
 
 <p>
-📧 Email:
-windowcleaningpro@proton.me
+📧 windowcleaningpro@proton.me
 </p>
 
 
 <p>
-📞 Phone:
-+1 (803) 622 - 0313
+📞 +1 (803) 622 - 0313
 </p>
 
 
 </div>
-</section>
 
 
 
 
 
-<footer>
+</div>
+
+
+
+
+
+
+
+<footer style="text-align:center;padding:35px;background:#111;color:white;">
+
 
 <p>
 © 2026 ClearView Window Cleaning
 </p>
 
+
 <p>
 Crystal Clear Windows. Reliable Service.
 </p>
+
 
 </footer>
 
@@ -528,122 +579,161 @@ Crystal Clear Windows. Reliable Service.
 
 
 
-<style>
-
-footer {
-
-background:#111;
-
-color:white;
-
-text-align:center;
-
-padding:30px;
-
-margin-top:40px;
-
-}
 
 
-/* FORM STYLING */
-
-input,
-textarea {
-
-width:100%;
-
-padding:15px;
-
-margin:10px 0;
-
-border-radius:10px;
-
-border:1px solid #ccc;
-
-font-size:16px;
-
-font-family:inherit;
-
-}
+<script type="module">
 
 
-textarea {
-
-height:120px;
-
-resize:none;
-
-}
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 
-form .button {
+import {
 
-border:none;
+getFirestore,
 
-cursor:pointer;
+collection,
 
-font-size:16px;
+getDocs,
 
-}
+query,
+
+orderBy,
+
+limit
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
 
-/* ANIMATIONS */
-
-
-@keyframes fade {
-
-from {
-
-opacity:0;
-
-}
-
-to {
-
-opacity:1;
-
-}
-
-}
 
 
 
-@keyframes slideUp {
-
-from {
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to {
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
+const firebaseConfig = {
 
 
+apiKey: "AIzaSyDrefBbTB8v-p76GvSQrwTI-SMjzw3jiNw",
 
-@keyframes float {
 
-50% {
+authDomain: "clearview-27bb3.firebaseapp.com",
 
-transform:translateY(-10px);
 
-}
+projectId: "clearview-27bb3",
+
+
+storageBucket: "clearview-27bb3.firebasestorage.app",
+
+
+messagingSenderId: "753453374188",
+
+
+appId: "1:753453374188:web:523a361368de808cac23c9",
+
+
+measurementId: "G-5FEMHNH98E"
+
+
+};
+
+
+
+
+const app = initializeApp(firebaseConfig);
+
+
+const db = getFirestore(app);
+
+
+
+
+
+
+
+async function loadHomeReviews(){
+
+
+const box = document.getElementById("homeReviews");
+
+
+
+const q = query(
+
+collection(db,"reviews"),
+
+orderBy("date","desc"),
+
+limit(3)
+
+);
+
+
+
+const snapshot = await getDocs(q);
+
+
+
+box.innerHTML = "";
+
+
+
+if(snapshot.empty){
+
+
+box.innerHTML = `
+
+<p>
+No one has reviewed ClearView yet. Be the first!
+</p>
+
+`;
+
+return;
 
 }
 
 
 
-</style>
+
+snapshot.forEach((doc)=>{
+
+
+const data = doc.data();
+
+
+
+box.innerHTML += `
+
+<div style="margin:15px 0;padding:15px;background:#eef8ff;border-radius:15px;">
+
+
+<b>${data.name}</b>
+
+
+<p>
+${data.rating}
+</p>
+
+
+<p>
+${data.description || ""}
+</p>
+
+
+</div>
+
+`;
+
+});
+
+
+}
+
+
+
+loadHomeReviews();
+
+
+</script>
+
 
 
 
