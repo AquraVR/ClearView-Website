@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ClearView Window Cleaning</title>
+
+<style>
+
+* {
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body {
+font-family:"Segoe UI", Arial, sans-serif;
+background:#f5fbff;
+color:#222;
+overflow-x:hidden;
+}
+
+
+/* HERO */
+
+.hero {
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+background:linear-gradient(135deg,#0077ff,#00d4ff);
+
+color:white;
+
+animation:fade 1s ease;
+
+}
+
+
+.logo {
+
+font-size:clamp(55px,8vw,95px);
+
+font-weight:900;
+
+animation:float 3s ease-in-out infinite;
+
+text-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+
+.hero p {
+
+font-size:clamp(18px,3vw,28px);
+
+margin-top:15px;
+
+}
+
+
+
+.buttons {
+
+margin-top:35px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+
+
+.button {
+
+padding:15px 35px;
+
+border-radius:50px;
+
+background:white;
+
+color:#0077ff;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:.3s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+
+
+.button:hover {
+
+transform:translateY(-4px) scale(1.05);
+
+}
+
+
+
+/* CONTENT */
+
+section {
+
+width:min(92%,1200px);
+
+margin:auto;
+
+padding:60px 0;
+
+}
+
+
+
+.card {
+
+background:white;
+
+padding:35px;
+
+border-radius:22px;
+
+margin-bottom:35px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+animation:slideUp .7s ease;
+
+}
+
+
+
+.card h2 {
+
+color:#0077ff;
+
+margin-bottom:15px;
+
+font-size:clamp(28px,4vw,38px);
+
+}
+
+
+
+/* SERVICES */
+
+.service-list {
+
+line-height:2;
+
+font-size:18px;
+
+}
+
+
+
+/* PRICING */
+
+.price {
+
+color:#0077ff;
+
+font-size:28px;
+
+font-weight:bold;
+
+margin:10px 0 20px;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="hero">
+
+
+<div>
+
+
+<div class="logo">
+ClearView
+</div>
+
+
+<p>
+Crystal Clear Windows. Reliable Service.
+</p>
+
+
+<div class="buttons">
+
+
+<a href="#quote" class="button">
+Get A Quote
+</a>
+
+
+<a href="#cash" class="button">
+Pay In Cash?
+</a>
+
+
+<a href="reviews.html" class="button">
+View Reviews
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<section>
+
+
+<div class="card">
+
+
+<h2>
+About ClearView
+</h2>
+
+
+<p>
+ClearView provides affordable and reliable window cleaning services focused on making your windows spotless.
+</p>
+
+
+</div>
+
+
+
+<div class="card">
+
+
+<h2>
+Services
+</h2>
+
+
+<p class="service-list">
+
+✨ Exterior Window Cleaning<br>
+
+✨ Screen Cleaning<br>
+
+✨ Streak-Free Glass Cleaning<br>
+
+✨ Residential Homes
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h2>
+Pricing
+</h2>
+
+
+<p>
+Simple, upfront pricing with no hidden fees.
+</p>
+
+
+<br>
+
+
+<h3>
+🪟 Small Window
+</h3>
+
+<p>
+Bathroom windows, laundry windows, small windows
+</p>
+
+
+<div class="price">
+$4 Each
+</div>
+
+
+
+<h3>
+🪟 Medium Window
+</h3>
+
+
+<p>
+Standard bedroom and living room windows
+</p>
+
+
+<div class="price">
+$6 Each
+</div>
+
+
+<h3>
+🪟 Large Window
+</h3>
+
+
+<p>
+Picture windows, large front windows, sliding glass doors
+</p>
+
+
+<div class="price">
+$10 Each
+</div>
+
+
+</div>
+<div class="card">
+
+
+<h2>
+Service Information
+</h2>
+
+
+<p>
+✅ Ground-level exterior window cleaning available.
+</p>
+
+
+<p>
+🪜 If you have a safe, stable ladder available that reaches your second-story windows, ClearView can clean those windows using your ladder.
+</p>
+
+
+<p>
+ClearView does not provide ladders or climb onto roofs.
+</p>
+
+
+<p>
+Safety is our top priority. If a window cannot be reached safely, that part of the job may be declined.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+Customer Reviews
+</h2>
+
+
+<p>
+See what customers are saying about ClearView.
+</p>
+
+
+<a class="button" href="reviews.html">
+
+View All Reviews
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card" id="cash">
+
+
+<h2>
+Pay In Cash?
+</h2>
+
+
+<p>
+Yes! ClearView accepts cash payments after the cleaning service is completed.
+</p>
+
+
+<p>
+Payment is only due once the job is finished and you are satisfied.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card" id="quote">
+
+
+<h2>
+Get A Quote
+</h2>
+
+
+<p>
+Request a free estimate for your window cleaning job.
+</p>
+
+
+<br>
+
+
+<form>
+
+
+<input type="text" placeholder="Your Name">
+
+
+<input type="number" placeholder="Number of Windows">
+
+
+<textarea placeholder="Tell us about your job"></textarea>
+
+
+<button class="button" type="submit">
+
+Send Quote
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card contact">
+
+
+<h2>
+Contact ClearView
+</h2>
+
+
+<p>
+📧 Email:
+windowcleaningpro@proton.me
+</p>
+
+
+<p>
+📞 Phone:
++1 (803) 622 - 0313
+</p>
+
+
+</div>
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 ClearView Window Cleaning
+</p>
+
+<p>
+Crystal Clear Windows. Reliable Service.
+</p>
+
+</footer>
+
+
+
+
+
+<style>
+
+footer {
+
+background:#111;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:40px;
+
+}
+
+
+/* FORM STYLING */
+
+input,
+textarea {
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+border-radius:10px;
+
+border:1px solid #ccc;
+
+font-size:16px;
+
+font-family:inherit;
+
+}
+
+
+textarea {
+
+height:120px;
+
+resize:none;
+
+}
+
+
+form .button {
+
+border:none;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+
+
+/* ANIMATIONS */
+
+
+@keyframes fade {
+
+from {
+
+opacity:0;
+
+}
+
+to {
+
+opacity:1;
+
+}
+
+}
+
+
+
+@keyframes slideUp {
+
+from {
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+@keyframes float {
+
+50% {
+
+transform:translateY(-10px);
+
+}
+
+}
+
+
+
+</style>
+
+
+
+
+
+</body>
+
+</html>
